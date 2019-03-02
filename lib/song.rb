@@ -29,7 +29,7 @@ class Song
   end 
   
   def self.genre_count
-    @@genre_count = {}
+    @@genre_count.each_with_object(Hash.new(0)) {|k, v| v[k] +=1}
   end 
   
   def self.artist_count 
