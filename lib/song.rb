@@ -1,12 +1,10 @@
 class Song 
   attr_accessor :name, :artist, :genre 
   
-  @@count = 0;
-  @@genres = [];
-  @@artists = [];
-  @@genre_count = {};
-  @@artist_count = {};
-  
+  @@count = 0
+  @@genres = []
+  @@artists = []
+ 
   def initialize(name, artist, genre)
     @@count += 1 
     @@genres << genre
@@ -29,11 +27,11 @@ class Song
   end 
   
   def self.genre_count
-    @@genre_count.each_with_object(Hash.new(0)) {|k, v| v[k] +=1}
+    @@genres.each_with_object(Hash.new(0)) {|k, v| v[k] +=1}
   end 
   
   def self.artist_count 
-    @@artist_count = {}
+    @@artists.each_with_object(Hash.new(0)) {|k, v| v[k] +=1}
   end 
   
   
