@@ -21,12 +21,11 @@ class Song
   end 
   
   def self.genres
-    @@genres = []
-    @@genres << @genre.each {|genre|}
+    @@genres.uniq!
   end
   
   def self.artist
-    @@artists = [] 
+    @@artists.uniq! 
   end 
   
   def self.genre_count
